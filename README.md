@@ -409,13 +409,15 @@
 |400| [](#)|
 
 1. ### What are the possible ways to create objects in JavaScript?
+### Каковы возможные способы создания объектов в JavaScript?
 
 There are many ways to create objects in javascript as below,
+Есть много способов создания объектов в JavaScript, как показано ниже:
 
 1. **Object constructor:**
-
+**Конструктор объекта:**
  The simplest way to create an empty object is using Object constructor. Currently this approach is not recommended.
-
+ Самый простой способ создать пустой объект - использовать конструктор объекта. В настоящее время такой подход не рекомендуется.
  ```javascript
  var object = new Object();
  ```
