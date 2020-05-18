@@ -408,34 +408,32 @@
 |399| [](#)|
 |400| [](#)|
 
-1. ### What are the possible ways to create objects in JavaScript?
-### Каковы возможные способы создания объектов в JavaScript?
+1. ### Каковы возможные способы создания объектов в JavaScript? 
 
-There are many ways to create objects in javascript as below,
 Есть много способов создания объектов в JavaScript, как показано ниже:
 
-1. **Object constructor:**
-**Конструктор объекта:**
- The simplest way to create an empty object is using Object constructor. Currently this approach is not recommended.
+ 1. **Конструктор объекта:**
+   
  Самый простой способ создать пустой объект - использовать конструктор объекта. В настоящее время такой подход не рекомендуется.
  ```javascript
  var object = new Object();
  ```
 
- 2. **Object's create method:**
+ 2. **Метод create объекта:**
 
- The create method of Object creates a new object by passing the prototype object as a parameter
+ Метод create объекта создает новый объект, передавая объект-прототип в качестве параметра
  ```javascript
  var object = Object.create(null);
  ```
 
- 3. **Object literal syntax:**
- The object literal syntax is equivalent to create method when it passes null as parameter
+ 3. **Синтаксис литерала объекта:**
+   
+ Синтаксис литерала объекта эквивалентен методу create, когда он передает значение NULL в качестве параметра
  ```javascript
  var object = {};
  ```
 
- 4. **Function constructor:**
+ 4. **Функция конструктор:**
  Create any function and apply the new operator to create object instances,
  ```javascript
  function Person(name){
@@ -589,43 +587,43 @@ let arrayIntegers3 = arrayIntegersOriginal3.splice(3, 1, "a", "b", "c"); //retur
 
 **[⬆ Back to Top](#table-of-contents)**
 
-7. ### What is the difference between slice and splice?
+1. ### В чем разница между slice и splice?
 
-Some of the major difference in a tabular form
+Некоторые из основных отличий в табличной форме
 
 | Slice | Splice |
 |---- | ---------
-| Doesn't modify the original array(immutable)  | Modifies the original array(mutable) |
-| Returns the subset of original array | Returns the deleted elements as array  |
-| Used to pick the elements from array | Used to insert or delete elements to/from array|
+| Не изменяет исходный массив (неизменяемый)  | Изменяет исходный массив (изменяемый) |
+| Возвращает подмножество исходного массива | Возвращает удаленные элементы в виде массива |
+| Используется для выбора элементов из массива | Используется для вставки или удаления элементов в / из массива |
 
 **[⬆ Back to Top](#table-of-contents)**
 
-8. ### How do you compare Object and Map?
-**Objects** are similar to **Maps** in that both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. Due to this reason, Objects have been used as Maps historically. But there are important differences that make using a Map preferable in certain cases.
+8. ### Сраните Object и Map?
+**Objects** похожи на **Maps** в том, что оба позволяют вам устанавливать ключи к значениям, извлекать эти значения, удалять ключи и определять, сохраняется ли что-то в ключе. По этой причине Объекты исторически использовались как Карты. Но есть важные отличия, которые делают использование карты предпочтительным в определенных случаях:
 
-1. The keys of an Object are Strings and Symbols, whereas they can be any value for a Map, including functions, objects, and any primitive.
-2. The keys in Map are ordered while keys added to object are not. Thus, when iterating over it, a Map object returns keys in order of insertion.
-3. You can get the size of a Map easily with the size property, while the number of properties in an Object must be determined manually.
-4. A Map is an iterable and can thus be directly iterated, whereas iterating over an Object requires obtaining its keys in some fashion and iterating over them.
-5. An Object has a prototype, so there are default keys in the map that could collide with your keys if you're not careful. As of ES5 this can be bypassed by using map = Object.create(null), but this is seldom done.
-6. A Map may perform better in scenarios involving frequent addition and removal of key pairs.
+1. Ключами объекта являются строки и символы, в то время как они могут иметь любое значение для Map, включая функции, объекты и любые примитивы.
+2. Ключи в Map упорядочены, а ключи, добавленные к объекту - нет. Таким образом, при итерации по нему объект Map возвращает ключи в порядке вставки.
+3. Вы можете легко получить размер Map с помощью свойства size, в то время как количество свойств в объекте должно быть определено вручную.
+4. Структура Map - перечисляемая  и, таким образом, может быть непосредственно проитерирована, тогда как для итерации по объекту требуется получить его ключи некоторым способом и выполнить итерации по ним.
+5. У объекта есть прототип, так как у Map есть ключи по умолчанию, которые могут столкнуться с вашими ключами, если вы не будете осторожны. Начиная с ES5 это можно обойти, используя map = Object.create(null), но это редко делается.
+6. Map может работать лучше в сценариях, включающих частое добавление и удаление пар ключей.
 
 **[⬆ Back to Top](#table-of-contents)**
 
-9. ### What is the difference between == and === operators?
-JavaScript provides both strict(===, !==) and type-converting(==, !=) equality comparison. The strict operators takes type of variable in consideration, while non-strict operators make type correction/conversion based upon values of variables. The strict operators follow the below conditions for different types,
-1. Two strings are strictly equal when they have the same sequence of characters, same length, and same characters in corresponding positions.
-2. Two numbers are strictly equal when they are numerically equal. i.e, Having the same number value.
-   There are two special cases in this,
-   1. NaN is not equal to anything, including NaN.
-   2. Positive and negative zeros are equal to one another.
-3. Two Boolean operands are strictly equal if both are true or both are false.
-4. Two objects are strictly equal if they refer to the same Object.
-5. Null and Undefined types are not equal with ===, but equal with ==. i.e,
-    null===undefined --> false but null==undefined --> true
+1. ### В чем разница между операторами == и === ?
+JavaScript обеспечивает как строгое (===,! ==), так и сравнение с преобразованием типов (==,! =). Строгие операторы принимают во внимание тип переменной, в то время как нестрогие операторы делают коррекцию / преобразование типа на основе значений переменных. Строгие операторы следуют приведенным ниже условиям для разных типов:
+1. Две строки строго равны, если они имеют одинаковую последовательность символов, одинаковую длину и одинаковые символы в соответствующих позициях.
+2. Два числа строго равны, когда они численно равны. т.е. имея одинаковое числовое значение.
+    В этом есть два особых случая:
+   1. NaN не равно ничему, включая NaN.
+   2. Положительные и отрицательные нули равны друг другу.
+3. Два булевых операнда строго равны, если оба истинны или оба ложны.
+4. Два объекта строго равны, если они ссылаются на один и тот же объект.
+5. Null и Undefined типы не равны при ===, но равны при ==. т.e,
+    null===undefined --> false, но null==undefined --> true
 
-Some of the example which covers the above cases
+Некоторые из примеров, которые охватывают вышеупомянутые случаи
 ```javascript
 0 == false   // true
 0 === false  // false
@@ -635,19 +633,19 @@ null == undefined // true
 null === undefined // false
 '0' == false // true
 '0' === false // false
-[]==[] or []===[] //false, refer different objects in memory
-{}=={} or {}==={} //false, refer different objects in memory
+[]==[] or []===[] //false, ссылаются на разные объекты в памяти
+{}=={} or {}==={} //false, ссылаются на разные объекты в памяти
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
 
-10. ### What are lambda or arrow functions?
-An arrow function is a shorter syntax for a function expression and does not have its own **this, arguments, super, or new.target**. These function are best suited for non-method functions, and they cannot be used as constructors.
+10. ### Что такое лямбда-функции или стрелки?
+Функция стрелки является более коротким синтаксисом для выражения функции и не имеет своего собственного **this, arguments, super, or new.target**. Эти функции лучше всего подходят для не-методических функций, и их нельзя использовать в качестве конструкторов.
 
 **[⬆ Back to Top](#table-of-contents)**
 
-11. ### What is a first class function?
-In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable. For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable. For example, in the below example, handler functions assigned to a listener
+11. ### Что такое функция первого класса?
+В Javascript функции являются объектами первого класса. Функции первого класса означают, что функции на этом языке обрабатываются как любая другая переменная. Например, на таком языке функция может быть передана в качестве аргумента другим функциям, может быть возвращена другой функцией и может быть назначена в качестве значения для переменной. Например, в приведенном ниже примере функции-обработчики назначены слушателю
 ```javascript
 const handler = () => console.log ('This is a click handler function');
 document.addEventListener ('click', handler);
@@ -655,16 +653,16 @@ document.addEventListener ('click', handler);
 
 **[⬆ Back to Top](#table-of-contents)**
 
-12. ### What is a first order function?
-First-order function is a function that doesn’t accept other function as an argument and doesn’t return a function as its return value.
+12. ### Что такое функция первого порядка?
+Функция первого порядка - это функция, которая не принимает другую функцию в качестве аргумента и не возвращает функцию в качестве возвращаемого значения.
 ```javascript
 const firstOrder = () => console.log ('I am a first order function!');
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
 
-13. ### What is a higher order function?
-Higher-order function is a function that accepts other function as an argument or returns a function as a return value.
+13. ### Что такое функция высшего порядка?
+Функция высшего порядка - это функция, которая принимает другую функцию в качестве аргумента или возвращает функцию в качестве возвращаемого значения.
 ```javascript
 const firstOrderFunc = () => console.log ('Hello I am a First order function');
 const higherOrder = ReturnFirstOrderFunc => ReturnFirstOrderFunc ();
@@ -681,8 +679,8 @@ const unaryFunction = a => console.log (a + 10); //Add 10 to the given argument 
 
 **[⬆ Back to Top](#table-of-contents)**
 
-15. ### What is currying function?
-Currying is the process of taking a function with multiple arguments and turning it into a sequence of functions each with only a single argument. Currying is named after a mathematician Haskell Curry. By applying currying, a n-ary function turns it into a unary function. Let's take an example of n-ary function and how it turns into a currying function
+15. ### Что такое унарная функция?
+Каррирование - это процесс получения функции с несколькими аргументами и превращения ее в последовательность функций, каждая из которых имеет только один аргумент. Каррирование названо в честь математика Хаскелла Карри. Применяя Каррирование, n-арная функция превращает ее в унарную функцию. Давайте возьмем пример n-арной функции и как она превращается в частичную функцию:
 ```javascript
 const multiArgFunction = (a, b, c) => a + b + c;
 const curryUnaryFunction = a => b => c => a + b + c;
@@ -690,13 +688,13 @@ curryUnaryFunction (1); // returns a function: b => c =>  1 + b + c
 curryUnaryFunction (1) (2); // returns a function: c => 3 + c
 curryUnaryFunction (1) (2) (3); // returns the number 6
 ```
-Curried functions are great to improve code re-usability and functional composition.
+Каррированные функции отлично подходят для улучшения повторного использования кода и функциональной композиции.
 
 **[⬆ Back to Top](#table-of-contents)**
 
-16. ### What is a pure function?
+16. Что такое чистая функция?
 
-A **Pure function** is a function where the return value is only determined by its arguments without any side effects. i.e, If you call a function with the same arguments 'n' number of times and 'n' number of places in the application then it will always return the same value. Let's take an example to see the difference between pure and impure functions,
+A **Чистая функция** - это функция, в которой возвращаемое значение определяется только его аргументами без каких-либо побочных эффектов. т.е. если вы вызываете функцию с одинаковыми аргументами «n» количество раз и в «n» количестве мест в приложении, то она всегда будет возвращать одно и то же значение. Давайте рассмотрим пример, чтобы увидеть разницу между чистыми и нечистыми функциями:
 ```javascript
 //Impure
 let numberArray = [];
@@ -711,35 +709,35 @@ console.log (numberArray); // returns [6]
 console.log (pureAddNumber (7) (numberArray)); // returns [6, 7]
 console.log (numberArray); // returns [6]
 ```
-As per above code snippets, Push function is impure itself by altering the array and returning an push number index which is independent of parameter value. Whereas Concat on the other hand takes the array and concatenates it with the other array producing a whole new array without side effects. Also, the return value is a concatenation of previous array.
-Remember that Pure functions are important as they simplify unit testing without any side effects and no need for dependency injection. They also avoid tight coupling and makes harder to break your application by not having any side effects. These principles are coming together with **Immutability** concept of ES6 by giving preference to **const** over **let** usage.
+В соответствии с приведенными выше фрагментами кода, функция Push сама по себе является нечистой, изменяя массив и возвращая индекс добавленного числа, который не зависит от значения параметра. В то время как Concat, с другой стороны, берет массив и объединяет его с другим массивом, создавая новый массив без побочных эффектов. Также возвращаемое значение является объединением предыдущего массива.
+Помните, что функции Pure важны, поскольку они упрощают модульное тестирование без каких-либо побочных эффектов и не требуют внедрения зависимостей. Они также избегают жесткой связи и усложняют поломку приложения, не вызывая побочных эффектов. Эти принципы сочетаются с концепцией **Immutability** ES6, отдавая предпочтение в использовании **const** над **let** .
 
 **[⬆ Back to Top](#table-of-contents)**
 
-17. ### What is the purpose of let keyword?
+17.  ### Какова цель ключевого слова let?
 
-The let statement declares a **block scope local variable**. Hence the variables defined with let keyword are limited in scope to the block, statement, or expression on which it is used. Whereas variables declared with the var keyword used to define a variable globally, or locally to an entire function regardless of block scope. Let's take an example to demonstrate the usage,
+Оператор let объявляет **область видимости локальной переменной в блоке** - **block scope local variable**. Следовательно, переменные, определенные с помощью ключевого слова let, ограничены областью блока, оператором или выражением, в котором они используются. Принимая во внимание, что переменные, объявленные с ключевым словом var, используются для определения переменной глобально или локально для всей функции независимо от области видимости блока. Давайте возьмем пример, чтобы продемонстрировать использование:
 ```javascript
 let counter = 30;
 if (counter === 30) {
   let counter = 31;
   console.log(counter); // 31
 }
-console.log(counter); // 30 (because if block variable won't exist here)
+console.log(counter); // 30 (потому что блочная переменная не будет доступна здесь)
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
 
-18. ### What is the difference between let and var?
-You can list out the differences in a tabular format
+18.  ### В чем разница между let и var?
+Вы можете перечислить различия в табличном формате
 
 | var | let |
 |---- | ---------
-| It is been available from the beginning of JavaScript  | Introduced as part of ES6 |
-| It has function scope | It has block scope  |
-| Variables will be hoisted | Hoisted but not initialized |
+| Это было изначально доступно в JavaScript  | Введен как часть ES6 |
+| Имеет область видимости функции | Имеет область видимости блока |
+| Переменные будут подняты | Переменные будут подняты, но не инициализированы |
 
-Let's take an example to see the difference,
+Давайте рассмотрим пример, чтобы увидеть разницу,
 ```javascript
 function userDetails(username) {
    if(username) {
@@ -755,13 +753,13 @@ function userDetails(username) {
 
 **[⬆ Back to Top](#table-of-contents)**
 
-19. ### What is the reason to choose the name let as keyword?
-    Let is a mathematical statement that was adopted by early programming languages like Scheme and Basic. It has been borrowed from dozens of other languages that use let already as a traditional keyword as close to var as possible.
+19. ### Какова причина выбора имени let в качестве ключевого слова?
+    Let - это математическое утверждение, которое было принято ранними языками программирования, такими как Scheme и Basic. Он заимствован из десятков других языков, которые используют let уже как традиционное ключевое слово, максимально приближенное к var.
 
 **[⬆ Back to Top](#table-of-contents)**
 
-20. ### How do you redeclare variables in switch block without an error?
-    If you try to redeclare variables in a `switch block` then it will cause errors because there is only one block. For example, the below code block throws a syntax error as below,
+20. ### Как переопределить переменные в switch block без ошибок?
+    Если вы попытаетесь переопределить переменные в «блоке переключателей», это приведет к ошибкам, поскольку существует только один блок. Например, приведенный ниже блок кода выдает синтаксическую ошибку, как показано ниже:
     ```javascript
     let counter = 1;
     switch(x) {
@@ -774,7 +772,7 @@ function userDetails(username) {
         break;
     }
     ```
-    To avoid this error, you can create a nested block inside a case clause will create a new block scoped lexical environment.
+    Чтобы избежать этой ошибки, вы можете создать вложенный блок внутри case, чтобы создать новую lexical environment c блочной областью видимости:
     ```javascript
     let counter = 1;
         switch(x) {
@@ -791,8 +789,8 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-21. ### What is Temporal Dead Zone?
-    The Temporal Dead Zone is a behavior in JavaScript that occurs when declaring a variable with the let and const keywords, but not with var. In ECMAScript 6, accessing a let or const variable before its declaration (within its scope) causes a ReferenceError. The time span when that happens, between the creation of a variable’s binding and its declaration, is called the temporal dead zone. Let's see this behavior with an example,
+21. ### Что такое Temporal Dead Zone?
+    Временная мертвая зона - это поведение в JavaScript, которое возникает при объявлении переменной с помощью ключевых слов let и const, но не с помощью var. В ECMAScript 6 доступ к переменной let или const до ее объявления (в пределах его области видимости) вызывает ошибку ReferenceError. Промежуток времени, когда это происходит, между созданием привязки переменной и ее объявлением, называется временной мертвой зоной. Давайте посмотрим на это поведение на примере:
     ```javascript
     function somemethod() {
       console.log(counter1); // undefined
@@ -804,8 +802,8 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-22. ### What is IIFE(Immediately Invoked Function Expression)?
-    IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined. The signature of it would be as below,
+22. ### Что такое IIFE (Немедленно вызываемое функциональное выражение)?
+    IIFE (Немедленно вызываемое функциональное выражение) - это функция JavaScript, которая запускается сразу после ее определения. Сишнатура показана ниже:
     ```javascript
     (function ()
         {
@@ -814,7 +812,7 @@ function userDetails(username) {
      )
     ();
     ```
-    The primary reason to use an IIFE is to obtain data privacy because any variables declared within the IIFE cannot be accessed by the outside world. i.e, If you try to access variables with IIFE then it throws an error as below,
+    Основной причиной использования IIFE является обеспечение конфиденциальности данных, поскольку любые переменные, объявленные внутри IIFE не будут доступны снаружиany то есть, если вы пытаетесь получить доступ к переменным внутри IIFE, то выдается ошибка, как показано ниже,
     ```javascript
     (function ()
             {
@@ -828,24 +826,24 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-23. ### What is the benefit of using modules?
-    There are a lot of benefits to using modules in favour of a sprawling. Some of the benefits are,
-    1. Maintainablity
-    2. Reusability
-    3. Namespacing
+23. ### В чем преимущество использования модулей?
+    Есть много преимуществ использования модулей. Некоторые из преимуществ:
+    1. Поддерживаемость
+    2. Переиспользование
+    3. Пространство имен
 
     **[⬆ Back to Top](#table-of-contents)**
 
-24. ### What is memoization?
-    Memoization is a programming technique which attempts to increase a function’s performance by caching its previously computed results.  Each time a memoized function is called, its parameters are used to index the cache. If the data is present, then it can be returned, without executing the entire function. Otherwise the function is executed and then the result is added to the cache.
-    Let's take an example of adding function with memoization,
+24. ### Что такое memoization?
+    Мемоизация - это паттерн, который пытается повысить производительность функции путем кэширования ранее вычисленных результатов.  Каждый раз, когда вызывается мемоизированная функция, ее параметры используются для индексации кэша. Если данные присутствуют, они могут быть возвращены без выполнения всей функции. В противном случае функция выполняется, а затем результат добавляется в кэш.
+     Давайте рассмотрим пример добавления функции с мемеоизацией,
     ```javascript
     const memoizAddition = () => {
       let cache = {};
      return (value) => {
       if (value in cache) {
-       console.log('Fetching from cache');
-       return cache[value]; // Here, cache.value cannot be used as property name starts with the number which is not valid JavaScript  identifier. Hence, can only be accessed using the square bracket notation.
+       console.log('Извлечение из кеша);
+       return cache[value]; // Здесь cache.value нельзя использовать, так как имя свойства начинается с номера, который не является допустимым идентификатором JavaScript. Следовательно, доступ возможен только с использованием записи в квадратных скобках.
       }
       else {
        console.log('Calculating result');
@@ -863,14 +861,13 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-25. ### What is Hoisting?
-    Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution. Remember that JavaScript only hoists declarations, not initialisation.
-    Let's take a simple example of variable hoisting,
+25. ### Что такое Hoisting?
+    Подъем - это механизм JavaScript, в котором переменные и объявления функций перемещаются в верхнюю часть их области видимости перед выполнением кода. Помните, что JavaScript только поднимает объявления, а не инициализацию. Давайте возьмем простой пример подъема переменной,
     ```javascript
     console.log(message); //output : undefined
     var message = ’The variable Has been hoisted’;
     ```
-    The above code looks like as below to the interpreter,
+    Приведенный выше код глазами интерпретатора:
     ```javascript
     var message;
     console.log(message);
@@ -879,9 +876,9 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-26. ### What are classes in ES6?
-    In ES6, Javascript classes are primarily syntactical sugar over JavaScript’s existing prototype-based inheritance.
-    For example, the prototype based inheritance written in function expression as below,
+26. ### Что такое классы в ES6?
+    В ES6 классы Javascript в основном являются синтаксическим сахаром по сравнению с существующим наследованием на основе прототипов JavaScript.
+    Например, наследование на основе прототипа, записанное в выражении функции, как показано ниже,
     ```javascript
     function Bike(model,color) {
         this.model = model;
@@ -892,7 +889,7 @@ function userDetails(username) {
         return this.model + ' bike has' + this.color + ' color';
     };
     ```
-    Whereas ES6 classes can be defined as an alternative
+    заись с помощью классов:
     ```javascript
     class Bike{
       constructor(color, model) {
@@ -908,12 +905,12 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-27. ### What are closures?
-    A closure is the combination of a function and the lexical environment within which that function was declared. i.e, It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
-    1. Own scope where variables defined between its curly brackets
-    2. Outer function’s variables
-    3. Global variables
-    Let's take an example of closure concept,
+27. ### Что такое замыкания?
+    Замыкание - это сочетание функции и лексическго окружения, в котором эта функция была объявлена. т.е. это внутренняя функция, которая имеет доступ к переменным снаружи или во вложенной функции. Замыкание имеет три области видимости:
+    1. Собственная область, где переменные определены в фигурных скобках
+    2. Внешние переменные функции
+    3. Глобальные переменные
+    Давайте рассмотрим пример концепции замыкания,
     ```javascript
     function Welcome(name){
       var greetingInfo = function(message){
@@ -929,31 +926,31 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-28. ### What are modules?
-    Modules refers small units of independent, reusable code and also act as foundation of many JavaScript design patterns.  Most of the JavaScript modules export an object literal, a function, or a constructor
+28. ### Что такое модули?
+    Модули ссылаются на небольшие блоки независимого, многократно используемого кода, а также служат основой многих шаблонов проектирования JavaScript. Большинство модулей JavaScript экспортируют литерал объекта, функцию или конструктор
 
     **[⬆ Back to Top](#table-of-contents)**
 
-29. ### Why do you need modules?
-    Below are the list of benefits using modules in javascript ecosystem
-    1. Maintainablity
-    2. Reusability
-    3. Namespacing
+29. ### Зачем вам нужны модули?
+    Ниже приведен список преимуществ использования модулей в экосистеме javascript.
+    1. Поддерживаемость
+    2. Переиспользование
+    3. Пространство имен
 
     **[⬆ Back to Top](#table-of-contents)**
 
-30. ### What is scope in javascript?
-    Scope is the accessibility of variables, functions, and objects in some particular part of your code during runtime. In other words, scope determines the visibility of variables and other resources in areas of your code.
+30. ### Что такое область видимости в javascript?
+    Область видимости - это доступность переменных, функций и объектов в определенной части вашего кода во время его выполнения. Другими словами, область видимости определяет видимость переменных и других ресурсов в областях вашего кода.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-31. ### What is a service worker?
-    A Service worker is basically a script (JavaScript file) that runs in background, separate from a web page and provide features that don't need a web page or user interaction. Some of the major features of service workers are Rich offline experiences(offline first web application development), periodic background syncs, push notifications, intercept and handle network requests and programmatically managing a cache of responses.
+31. ### Что такое service worker?
+    Service worker - это, по сути, сценарий (файл JavaScript), который выполняется в фоновом режиме, отдельно от веб-страницы и предоставляет функции, которые не требуют веб-страницы или взаимодействия с пользователем. Некоторыми из основных функций Service worker-ов являются богатые возможности автономной работы (разработка первых веб-приложений в автономном режиме), периодические фоновые синхронизации, push-уведомления, перехват и обработка сетевых запросов, а также программное управление кешем ответов.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-32. ### How do you manipulate DOM using service worker?
-    Service worker can't access the DOM directly. But it can communicate with the pages it controls by responding to messages sent via the `postMessage` interface, and those pages can manipulate the DOM.
+32. ### Как вы управляете DOM, используя service worker?
+    Service worker не может получить прямой доступ к DOM. Но он может коммуницировать со страницами, которые он контролирует, отвечая на сообщения, отправленные через интерфейс `postMessage`, и эти страницы могут манипулировать DOM.
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -1001,7 +998,7 @@ function userDetails(username) {
     ```javascript
     document.cookie = "username=John expires=Sat, 8 Jun 2019 12:00:00 UTC";
     ```
-    2. By default, the cookie belongs to a current page. But you can tell the browser what path the cookie belongs to using a path parameter.
+    1. By default, the cookie belongs to a current page. But you can tell the browser what path the cookie belongs to using a path parameter.
     ```javascript
     document.cookie = "username=John path=/services";
     ```
@@ -1124,7 +1121,7 @@ function userDetails(username) {
     timedCount();
     ```
     Here postMessage() method is used to post a message back to the HTML page
-    2. Create a Web Worker Object: You can create a web worker object by checking for browser support. Let's name this file as web_worker_example.js
+    1. Create a Web Worker Object: You can create a web worker object by checking for browser support. Let's name this file as web_worker_example.js
     ```javascript
     if (typeof(w) == "undefined") {
       w = new Worker("counter.js");
@@ -1136,12 +1133,12 @@ function userDetails(username) {
       document.getElementById("message").innerHTML = event.data;
     };
     ```
-    3. Terminate a Web Worker:
+    1. Terminate a Web Worker:
     Web workers will continue to listen for messages (even after the external script is finished) until it is terminated. You can use terminate() method to terminate listening the messages.
     ```javascript
     w.terminate();
     ```
-    4. Reuse the Web Worker: If you set the worker variable to undefined you can reuse the code
+    1. Reuse the Web Worker: If you set the worker variable to undefined you can reuse the code
     ```javascript
     w = undefined;
     ```
@@ -1156,9 +1153,9 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-51. ### What is a promise?
-    A promise is an object that may produce a single value some time in the future with either a resolved value or a reason that it’s not resolved(for example, network error). It will be in one of the 3 possible states: fulfilled, rejected, or pending.
-    The syntax of promise would be as below
+51. ### Что такое promise?
+    Promise - это объект, который содержит будущее значение асинхронной операции, в одном  из двух вариантов: resolved или not resolved(к примеру, ошибка сети). It will be in one of the 3 possible states: fulfilled, rejected, or pending. Он будет в одном из 3 возможных состояний: выполнено, отклонено или ожидает рассмотрения.
+    Синтаксис promise будет таким, как показано ниже
     ```javascript
     const promise = new Promise(function(resolve, reject) {
       // promise description
@@ -1167,22 +1164,21 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-52. ### Why do you need a promise?
-    Promises are used to handle asynchronous operations. They provide an alternative approach for callbacks by reducing the callback hell and writing the cleaner code.
+52. ### Почему вы используете promise?
+    Промисы используются для обработки асинхронных операций. Они обеспечивают альтернативный подход для обратных вызовов, уменьшая ад обратных вызовов и позволяют писать более чистый код.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-53. ### What are the three states of promise?
-    Promises have three states:
-    1. **Pending:** This is an initial state of the Promise before an operation begins
-    2. **Fulfilled:** This state indicates that specified operation was completed.
-    3. **Rejected:** This state indicates that the operation did not complete. In this case an error value will be thrown.
+53. ### Какие три состояния есть у promise?
+    Promises имеют три состояния:
+    1. **Pending:** Ожидание - это начальное состояние промиса до начала операции
+    2. **Fulfilled:** Выполнено - это состояние указывает на то, что указанная операция была завершена.
+    3. **Rejected:** Отклонено - это состояние указывает на то, что операция не завершена. В этом случае будет выдано значение ошибки.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-54. ### What is a callback function?
-    A callback function is a function passed into another function as an argument. This function is invoked inside the outer function to complete an action.
-    Let's take a simple example of how to use callback function
+54. ### Что такое функция обратного вызова?
+    Функция обратного вызова - это функция, переданная в другую функцию в качестве аргумента. Эта функция вызывается внутри внешней функции для завершения действия. Давайте рассмотрим простой пример использования функции обратного вызова.
     ```javascript
     function callbackFunction(name) {
       console.log('Hello ' + name);
@@ -1197,9 +1193,8 @@ function userDetails(username) {
     ```
     **[⬆ Back to Top](#table-of-contents)**
 
-55. ### Why do we need callbacks?
-    The callbacks are needed because javascript is a event driven language. That means instead of waiting for a response javascript will keep executing while listening for other events.
-    Let's take an example with first function invoking an API call(simulated by setTimeout) and next function which logs the message.
+55. ### Зачем нам нужны обратные вызовы?
+    Обратные вызовы необходимы, потому что javascript - это событийно-ориентированныйархитектураязык. Это означает, что вместо ожидания ответа, javascript будет продолжать выполняться при прослушивании других событий. Давайте рассмотрим пример с первой функцией, вызывающей вызов API (имитируемой setTimeout), и следующей функцией, которая регистрирует сообщение.
     ```javascript
     function firstFunction(){
       // Simulate a code delay
@@ -1217,12 +1212,12 @@ function userDetails(username) {
     // Second function called
     // First function called
     ```
-    As observed from the output, javascript didn't wait for the response of first function and remaining code block get executed. So callbacks used in a way to make sure that certain code doesn’t execute until other code finished execution.
+    Как видно из результатов, javascript не ждал ответа первой функции и выполнения оставшегося блока кода. Обратные вызовы используются таким образом, чтобы убедиться, что определенный код не выполняется до тех пор, пока другой код не завершит выполнение.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-56. ### What is a callback hell?
-    Callback Hell is an anti-pattern with multiple nested callbacks which makes code hard to read and debug when dealing with asynchronous logic. The callback hell looks like below,
+56. ### Что такое callback hell?
+    Callback Hell - это анти-шаблон с несколькими вложенными обратными вызовами, который затрудняет чтение и отладку кода при работе с асинхронной логикой. Ад обратного вызова выглядит как описано ниже,
     ```javascript
     async1(function(){
         async2(function(){
@@ -1237,13 +1232,13 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-57. ### What is server-sent events?
-    Server-sent events (SSE) is a server push technology enabling a browser to receive automatic updates from a server via HTTP connection without resorting to polling. These are a one way communications channel - events flow from server to client only. This is been used in Facebook/Twitter updates, stock price updates, news feeds etc.
+57. ### Что такое server-sent events?
+    События, посылаемые сервером (SSE)  - это технология push-сервера, позволяющая браузеру получать автоматические обновления с сервера через HTTP-соединение, не прибегая к опросу. Это односторонний канал связи - события передаются только с сервера на клиент. Это использовалось в обновлениях Facebook / Twitter, обновлениях цен на акции, новостных лентах и т. д.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-58. ### How do you receive server-sent event notifications?
-    The EventSource object is used to receive server-sent event notifications. For example, you can receive messages from server as below,
+58. ### Как вы получаете server-sent event notifications?
+    Объект EventSource используется для получения server-sent event notifications. Например, вы можете получать сообщения с сервера, как показано ниже,
     ```javascript
     if(typeof(EventSource) !== "undefined") {
       var source = new EventSource("sse_generator.js");
@@ -1255,8 +1250,8 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-59. ### How do you check browser support for server-sent events?
-    You can perform browser support for server-sent events before using it as below,
+59. ### Как вы проверяете поддержку браузером server-sent events?
+    You can perform browser support for server-sent events before using it as below,Вы можете выполнить проверку браузера server-sent events, прежде чем использовать его, как показано ниже,
     ```javascript
     if(typeof(EventSource) !== "undefined") {
       // Server-sent events supported. Let's have some code here!
@@ -1267,27 +1262,27 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-60. ### What are the events available for server sent events?
-    Below are the list of events available for server sent events
-    | Event | Description |
+60. ### Какие события доступны для server sent events?
+    Ниже приведен список событий, доступных для событий server sent events
+    | Событие | Описание |
     |---- | ---------
-    | onopen  | It is used when a connection to the server is opened |
-    | onmessage | This event is used when a message is received  |
-    | onerror | It happens when an error occurs|
+    | onopen  | Используется при открытии соединения с сервером |
+    | onmessage | Это событие используется когда сообщение получено  |
+    | onerror | Это событие  при возникновении ошибки|
 
     **[⬆ Back to Top](#table-of-contents)**
 
-61. ### What are the main rules of promise?
-    A promise must follow a specific set of rules,
-    1. A promise is an object that supplies a standard-compliant `.then()` method
-    2. A pending promise may transition into either fulfilled or rejected state
-    3. A fulfilled or rejected promise is settled and it must not transition into any other state.
-    4. Once a promise is settled, the value must not change.
+61. ### Каковы основные правила promise?
+    Промисы должны следовать определенному набору правил:
+    1. Promise - это объект, который предоставляет стандартный метод `.then ()`.
+    2. Состояние pending (ожидание) промиса перейти в одн из двух состояний fulfilled (выполнено) или rejected (отклонено).
+    3. Выполненное или отклоненное состояние промиса считается исчерпанным, и оно не должно переходить в какое-либо другое состояние.
+    4. Как только промис получил состояние -  выполнено, значение не должно меняться.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-62. ### What is callback in callback?
-    You can nest one callback inside in another callback to execute the actions sequentially one by one. This is known as callbacks in callbacks.
+62. ### Что такое обратный вызов в обратном вызове?
+    Вы можете вложить один обратный вызов внутри другого обратного вызова, чтобы последовательно выполнять действия один за другим.
     ```javascript
     loadScript('/script1.js', function(script) {
        console.log('first script is loaded');
@@ -1309,8 +1304,8 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-63. ### What is promise chaining?
-    The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining. Let's take an example of promise chaining for calculating the final result,
+63. ### Что такое promise chaining?
+    Процесс выполнения последовательности асинхронных задач одна за другой с использованием промисов известен как цепочка обещаний. Давайте рассмотрим пример цепочки обещаний для расчета конечного результата,
     ```javascript
     new Promise(function(resolve, reject) {
 
@@ -1333,25 +1328,25 @@ function userDetails(username) {
 
     });
     ```
-    In the above handlers, the result is passed to the chain of .then() handlers with the below work flow,
-    1. The initial promise resolves in 1 second,
-    2. After that `.then` handler is called by logging the result(1) and then return a promise with the value of result * 2.
-    3. After that the value passed to the next `.then` handler by logging the result(2) and return a promise with result * 3.
-    4. Finally the value passed to the last `.then` handler by logging the result(6) and return a promise with result * 4.
+    В приведенных выше обработчиках результат передается цепочке обработчиков `.then()` со следующей последовательностью
+    1. Промис выполнится за 1 секунду,
+    2. После этого вызывается обработчик `.then, который распечатает результат (1), а затем вернет Промис со значением  result * 2.
+    3. После этого значение передается следующему обработчику `.then`, который распечатает результат (2), а затем вернет Промис со значением result * 3.
+    4. Наконец, значение передается последнему обработчику `.then`, который распечатает результат (6) и вернет Промис со значением result * 4.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-64. ### What is promise.all?
-    Promise.all is a promise that takes an array of promises as an input (an iterable), and it gets resolved when all the promises get resolved or any one of them gets rejected. For example, the syntax of promise.all method is below,
+64. ### Что такое promise.all?
+    Promise.all это метод промиса, который принимает на вход массив промисов (итеративный), этот промис резолвится когда все промисы из массива "разрешатся" или любой из них будет оклонен. Ниже приведен синтаксис метода,
     ```javascript
     Promise.all([Promise1, Promise2, Promise3]) .then(result) => {   console.log(result) }) .catch(error => console.log(`Error in promises ${error}`))
     ```
-    **Note:** Remember that the order of the promises(output the result) is maintained as per input order.
+    **Note:** Помните, что порядок промисов (вывод результата) поддерживается согласно порядку ввода.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-65. ### What is the purpose of race method in promise?
-    Promise.race() method will return the promise instance which is firstly resolved or rejected. Let's take an example of race() method where promise2 is resolved first
+65. ### Какова цель метода promise.race()?
+    Метод Promise.race() вернет экземпляр промиса,который первым разрешился или был  отклонен первым. Давайте рассмотрим пример метода race (), в котором  promise2 is разрешился первым
     ```javascript
     var promise1 = new Promise(function(resolve, reject) {
         setTimeout(resolve, 500, 'one');
@@ -1361,60 +1356,59 @@ function userDetails(username) {
     });
 
     Promise.race([promise1, promise2]).then(function(value) {
-      console.log(value); // "two" // Both promises will resolve, but promise2 is faster
+      console.log(value); // "two" // Оба промиса разрешились, но promise2 быстрее
     });
     ```
 
     **[⬆ Back to Top](#table-of-contents)**
 
-66. ### What is a strict mode in javascript?
-    Strict Mode is a new feature in ECMAScript 5 that allows you to place a program, or a function, in a “strict” operating context. This way it prevents certain actions from being taken and throws more exceptions. The literal expression `“use strict”;` instructs the browser to use the javascript code in the Strict mode.
+66. ### Что такое строгий режим в javascript?
+    Strict Mode - это новая фича в ECMAScript 5, позволяющая вам поместить программу или функцию в «строгий» рабочий контекст. Таким образом, предотвращается выполнение определенных действий и создается больше исключений. Литеральное выражение `“use strict”;` указывает браузеру использовать код javascript в строгом режиме.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-67. ### Why do you need strict mode?
-    Strict mode is useful to write "secure" JavaScript by notifying "bad syntax" into real errors. For example, it eliminates accidentally creating a global variable by throwing an error and also throws an error for assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object.
+67. ### Зачем нужен строгий режим?
+    Строгий режим полезен для написания «безопасного» JavaScript при помощи уведомлений «о плохом синтаксисе», предостерегая, от реальных ошибках. Например, он исключает случайное создание глобальной переменной путем выдачи ошибки, а также выбрасывает ошибку при присвоении недоступному для записи свойству, a get-свойству, a несуществующему свойству, несуществующей переменной или несуществующему объекту.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-68. ### How do you declare strict mode?
-    The strict mode is declared by adding "use strict"; to the beginning of a script or a function.
-    If declare at the beginning of a script, it has global scope.
+68. ### Как объявить strict mode?
+    Строгий режим объявляется путем добавления "use strict"; в начале скрипта или функции. Если объявить в начале скрипта, он имеет глобальную область видимости.
     ```javascript
     "use strict";
-    x = 3.14; // This will cause an error because x is not declared
+    x = 3.14; // Это приведет к ошибке, потому что х не объявлен
     ```
-    and if you declare inside a function, it has local scope
+    и если вы объявляете переменную внутри функции, она имеет локальную область видимости
     ```javascript
-    x = 3.14;       // This will not cause an error.
+    x = 3.14;       // Это не приведет к ошибке.
     myFunction();
 
     function myFunction() {
       "use strict";
-      y = 3.14;   // This will cause an error
+      y = 3.14;   // Это приведет к ошибке
     }
     ```
 
     **[⬆ Back to Top](#table-of-contents)**
 
-69. ### What is the purpose of double exclamation?
-    The double exclamation or negation(!!) ensures the resulting type is a boolean. If it was falsey (e.g. 0, null, undefined, etc.), it will be false, otherwise, true.
-    For example, you can test IE version using this expression as below,
+69. ### Какова назначение двойного восклицания?
+    Двойной восклицательный знак или двойное отрицание (!!) гарантирует, что результирующий тип будет логическим. If it was falsey (e.g. 0, null, undefined, etc.), Если это было false (например, 0, null, undefined и т. д.), это будет false, в противном случае - true.
+    Например, вы можете проверить версию IE, используя это выражение, как показано ниже,
     ```javascript
     let isIE8 = false;
     isIE8 = !! navigator.userAgent.match(/MSIE 8.0/);
     console.log(isIE8); // returns true or false
     ```
-    If you don't use this expression then it returns the original value.
+    Если вы не используете `!!`, оно вернет исходное значение.
     ```javascript
-    console.log(navigator.userAgent.match(/MSIE 8.0/));  // returns either an Array or null
+    console.log(navigator.userAgent.match(/MSIE 8.0/));  // возвращает либо массив, либо ноль
     ```
-    **Note:** The expression !! is not an operator, but it is just twice of ! operator.
+    **Note:** The expression !! это не оператор, это просто два ! оператора.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-70. ### What is the purpose of delete operator?
-    The delete keyword is used to delete the property as well as its value.
+70. ### Каково назначение оператора delete?
+    Ключевое слово delete используется для удаления как свойства, так и его значения.
     ```javascript
     var user= {name: "John", age:20};
     delete user.age;
@@ -1424,8 +1418,8 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-71. ### What is typeof operator?
-    You can use the JavaScript typeof operator to find the type of a JavaScript variable. It returns the type of a variable or an expression.
+71. ### Что такое оператор typeof?
+    Вы можете использовать оператор typeof, чтобы найти тип переменной JavaScript. Он возвращает тип переменной или выражения.
     ```javascript
     typeof "John Abraham"     // Returns "string"
     typeof (1 + 2)        // Returns "number"
@@ -1433,22 +1427,22 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-72. ### What is undefined property?
-    The undefined property indicates that a variable has not been assigned a value, or not declared at all. The type of undefined value is undefined too.
+72. ### Что такое свойство undefined?
+    Свойство undefined указывает, что переменной не присвоено значение или она не объявлена вообще. Тип неопределенного значения тоже не определен.
     ```javascript
     var user;    // Value is undefined, type is undefined
     console.log(typeof(user)) //undefined
     ```
-    Any variable can be emptied by setting the value to undefined.
+    Любую переменную можно очистить, задав значение undefined.
     ```javascript
     user = undefined
     ```
 
     **[⬆ Back to Top](#table-of-contents)**
 
-73. ### What is null value?
-    The value null represents the intentional absence of any object value. It is one of JavaScript's primitive values. The type of null value is object.
-    You can empty the variable by setting the value to null.
+73. ### что такое значение null?
+    Значение null представляет намеренное отсутствие какого-либо значения объекта. Это одно из примитивных значений JavaScript. Типом нулевого значения является объект.Это неверно. Это официально признанная ошибка в typeof, сохранённая для совместимости. Конечно, null не является объектом. Это специальное значение с отдельным типом. Повторимся, это ошибка в языке.
+     Вы можете очистить переменную, установив значение в null.
     ```javascript
     var user = null;
     console.log(typeof(user)) //object
@@ -1456,40 +1450,40 @@ function userDetails(username) {
 
     **[⬆ Back to Top](#table-of-contents)**
 
-74. ### What is the difference between null and undefined?
-    Below are the main differences between null and undefined,
+74. ### В чем разница между null и undefined?
+    Ниже приведены основные различия между null и undefined, обычно null используется для присвоения переменной «пустого» или «неизвестного» значения, а undefined – для проверок, была ли переменная назначена.
 
     | Null | Undefined |
     |---- | -----------|
-    | It is an assignment value which indicates that variable points to no object.  | It is not an assignment value where a variable has been declared but has not yet been assigned a value. |
-    | Type of null is object | Type of undefined is undefined  |
-    | The null value is a primitive value that represents the null, empty, or non-existent reference. | The undefined value is a primitive value used when a variable has not been assigned a value.|
-    | Indicates the absence of a value for a variable | Indicates absence of variable itself |
-    | Converted to zero (0) while performing primitive operations | Converted to NaN while performing primitive operations |
+    | Это присвоенное значение, которое указывает, что переменная не указывает на объект. | Это не присвоенное значение, в котором переменная была объявлена, но ей еще не присвоено значение.|
+    | Тип null является объектом | Тип undefined является undefined |
+    | Значение null - это примитивное значение, представляющее null, пустую или несуществующую ссылку. | Значение Undefined является примитивным значением, используемым, когда переменной не было присвоено значение.|
+    | Указывает на отсутствие значения для переменной | Указывает на отсутствие самой переменной |
+    | Конвертируется в ноль (0) при выполнении примитивных операций | Конвертируется в NaN при выполнении примитивных операций |
 
     **[⬆ Back to Top](#table-of-contents)**
 
-75. ### What is eval?
-    The eval() function evaluates JavaScript code represented as a string. The string can be a JavaScript expression, variable, statement, or sequence of statements.
+75. ### Что такоеeval?
+    Функция eval() исполняет содержащееся в аргументе выражение , представленное в виде строки. Строка может быть выражением JavaScript, переменной, оператором или последовательностью операторов.
     ```javascript
     console.log(eval('1 + 2')); //  3
     ```
 
     **[⬆ Back to Top](#table-of-contents)**
 
-76. ### What is the difference between window and document?
-    Below are the main differences between window and document,
+76. ### В чем разница между window и document?
+    Ниже приведены основные различия между window и document,
 
     | Window | Document |
     |---- | ---------
-    | It is the root level element in any web page  | It is the direct child of the window object. This is also known as Document Object Model(DOM) |
-    | By default window object is available implicitly in the page | You can access it via window.document or document.  |
-    | It has methods like alert(), confirm() and properties like document, location | It provides methods like getElementById, getElementByTagName, createElement etc  |
+    | Это корневой элемент на любой веб-странице | Это прямой потомок оконного объекта. Это также известно как объектная модель документа (DOM) |
+    | По умолчанию объект окна доступен неявно на странице | Вы можете получить к нему доступ через window.document or document. |
+    | У него есть такие методы, как alert(), verify() и такие свойства, как document, location | Он предоставляет такие методы, как getElementById, getElementByTagName, createElement и т. д. |
 
     **[⬆ Back to Top](#table-of-contents)**
 
 77. ### How do you access history in javascript?
-    The window.history object contains the browsers history. You can load previous and next URLs in the history using back() and next() methods.
+    Объект window.history содержит историю браузера. Вы можете загрузить предыдущий и следующий URL в истории, используя методы back() и next().
     ```javascript
     function goBack() {
       window.history.back()
@@ -1498,17 +1492,20 @@ function userDetails(username) {
       window.history.forward()
     }
     ```
-    **Note:** You can also access history without window prefix.
+    **Note:** Вы также можете получить доступ к истории без префикса window.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 78. ### What are the javascript data types?
     Below are the list of javascript data types available
-    1. Number
-    2. String
-    3. Boolean
-    4. Object
-    5. Undefined
+    1. Number для любых чисел: целочисленных или чисел с плавающей точкой, целочисленные значения ограничены диапазоном ±2^53. Кроме обычных чисел, существуют так называемые «специальные числовые значения», которые относятся к этому типу данных: Infinity, -Infinity и NaN.
+    2. String. Для строк. Строка может содержать один или больше символов, нет отдельного символьного типа.
+    3. Boolean Булевый (логический) тип, для true/false.
+    4. «null» значение для неизвестных значений – отдельный тип, имеющий одно значение nul.
+    5. «undefined» значение. Если переменная объявлена, но ей не присвоено никакого значения, то её значением будет undefined.
+    6. Object. Объекты же используются для хранения коллекций данных или более сложных объектов.
+    7. symbol. Тип (символ) используется для создания уникальных идентификаторов объектов. 
+    8. bigint. Для целых чисел произвольной длины.
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -1909,12 +1906,12 @@ function userDetails(username) {
      var mainString = "hello", subString = "hell";
      mainString.includes(subString)
      ```
-     2. **Using indexOf:** In an ES5 or older environments, you can use `String.prototype.indexOf` which returns the index of a substring. If the index value is not equal to -1 then it means the substring exist in the main string.
+     1. **Using indexOf:** In an ES5 or older environments, you can use `String.prototype.indexOf` which returns the index of a substring. If the index value is not equal to -1 then it means the substring exist in the main string.
      ```javascript
      var mainString = "hello", subString = "hell";
      mainString.indexOf(subString) !== -1
      ```
-     3. **Using RegEx:** The advanced solution is using Regular expression's test method(`RegExp.test`), which allows for testing for against regular expressions
+     1. **Using RegEx:** The advanced solution is using Regular expression's test method(`RegExp.test`), which allows for testing for against regular expressions
      ```javascript
      var mainString = "hello", regex = "/hell/";
      regex.test(mainString)
@@ -1942,16 +1939,16 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-123. ### What are the various url properties of location object?
-     The below `Location` object properties can be used to access URL components of the page,
-     1. href - The entire URL
-     2. protocol - The protocol of the URL
-     3. host - The hostname and port of the URL
-     4. hostname - The hostname of the URL
-     5. port - The port number in the URL
-     6. pathname - The path name of the URL
-     7. search - The query portion of the URL
-     8. hash - The anchor portion of the URL
+123. ### Каковы различные свойства URL объекта местоположения?
+     Приведенные ниже свойства объекта `Location` могут использоваться для доступа к URL-компонентам страницы,
+     1. href - Весь URL
+     2. protocol - Протокол URL
+     3. host - Имя хоста и порт URL
+     4. hostname - Имя хоста URL
+     5. port - Номер порта в URL
+     6. pathname - Путь к URL
+     7. search - Часть запроса URL
+     8. hash - Якорная часть URL
 
      **[⬆ Back to Top](#table-of-contents)**
 
@@ -1974,7 +1971,7 @@ function userDetails(username) {
      ```javascript
      !("key" in obj)
      ```
-     2. ** Using hasOwnProperty method:** You can use `hasOwnProperty` to particularly test for properties of the object instance (and not inherited properties)
+     1. ** Using hasOwnProperty method:** You can use `hasOwnProperty` to particularly test for properties of the object instance (and not inherited properties)
      ```javascript
      obj.hasOwnProperty("key") // true
      ```
@@ -2005,11 +2002,11 @@ function userDetails(username) {
      ```javascript
      Object.entries(obj).length === 0 && obj.constructor === Object // Since date object length is 0, you need to check constructor check as well
      ```
-     2. **Using Object keys(ECMA 5+):** You can use object keys length along with constructor type.
+     1. **Using Object keys(ECMA 5+):** You can use object keys length along with constructor type.
      ```javascript
      Object.keys(obj).length === 0 && obj.constructor === Object // Since date object length is 0, you need to check constructor check as well
      ```
-     3. **Using for-in with hasOwnProperty(Pre-ECMA 5):** You can use for-in loop along with hasOwnProperty.
+     1. **Using for-in with hasOwnProperty(Pre-ECMA 5):** You can use for-in loop along with hasOwnProperty.
      ```javascript
      function isEmpty(obj) {
        for(var prop in obj) {
@@ -2128,7 +2125,7 @@ function userDetails(username) {
      ```javascript
      object.key3 = "value3";
      ```
-     2. **Using square bracket notation:** This solution is useful when the name of the property is dynamically determined.
+     1. **Using square bracket notation:** This solution is useful when the name of the property is dynamically determined.
      ```javascript
      obj["key3"] = "value3";
      ```
@@ -2432,7 +2429,7 @@ function userDetails(username) {
      ```javascript
      document.getElementById("title").style.fontSize = "30px";
      ```
-     2. ** Using ClassName property:** It is easy to modify element class using className property
+     1. ** Using ClassName property:** It is easy to modify element class using className property
      ```javascript
       document.getElementById("title").style.className = "custom-title";
       ```
@@ -2606,11 +2603,11 @@ function userDetails(username) {
      ```javascript
      window.onload = function ...
      ```
-     2. **document.onload:**
+     1. **document.onload:**
      ```javascript
      document.onload = function ...
      ```
-     3. ** body onload:**
+     1. ** body onload:**
      ```javascript
      <body onload="script();">
      ```
@@ -3323,11 +3320,11 @@ function userDetails(username) {
      ```javascript
      objectName.property
      ```
-     2. **Square brackets notation:** It uses square brackets for property access
+     1. **Square brackets notation:** It uses square brackets for property access
      ```javascript
      objectName["property"]
      ```
-     3. **Expression notation:** It uses expression in the square brackets
+     1. **Expression notation:** It uses expression in the square brackets
      ```javascript
      objectName[expression]
      ```
@@ -4158,7 +4155,7 @@ function userDetails(username) {
      namespaceOne.func1(); // This is a first definition
      namespaceTwo.func1(); // This is a second definition
      ```
-     2. **Using IIFE (Immediately invoked function expression):** The outer pair of parenthesis of IIFE creates a local scope for all the code inside of it and makes the anonymous function a function expression. Due to that, you can create same function in two different function expressions to act as namespace.
+     1. **Using IIFE (Immediately invoked function expression):** The outer pair of parenthesis of IIFE creates a local scope for all the code inside of it and makes the anonymous function a function expression. Due to that, you can create same function in two different function expressions to act as namespace.
      ```javascript
      (function() {
       function fun1(){
@@ -4172,7 +4169,7 @@ function userDetails(username) {
         } fun1();
       }());
      ```
-     3. **Using a block and a let/const declaration:** In ECMAScript 6, you can simply use a block and a let declaration to restrict the scope of a variable to a block.
+     1. **Using a block and a let/const declaration:** In ECMAScript 6, you can simply use a block and a let declaration to restrict the scope of a variable to a block.
      ```javascript
       {
        let myFunction= function fun1(){
@@ -4614,11 +4611,11 @@ function userDetails(username) {
          .then(···);
      }
      ```
-     2. Compute the module specifier at runtime. For example, you can use it for internationalization.
+     1. Compute the module specifier at runtime. For example, you can use it for internationalization.
      ```javascript
      import(`messages_${getLocale()}.js`).then(···);
      ```
-     3. Import a module from within a regular script instead a module.
+     1. Import a module from within a regular script instead a module.
 
      **[⬆ Back to Top](#table-of-contents)**
 
@@ -4650,7 +4647,7 @@ function userDetails(username) {
      2. State isolation
      3. Global namespace isolation
      4. Compilation hooks
-     4. Nested virtualization
+     5. Nested virtualization
 
      **[⬆ Back to Top](#table-of-contents)**
 
@@ -4664,7 +4661,7 @@ function userDetails(username) {
      console.log(l10nDE.compare("ä", "z") === -1); // true
      console.log(l10nSV.compare("ä", "z") === +1); // true
      ```
-     2. **Sorting:**
+     1. **Sorting:**
      ```javascript
      var list = [ "ä", "a", "z" ]; // In German,  "ä" sorts with "a" Whereas in Swedish, "ä" sorts after "z"
      var l10nDE = new Intl.Collator("de");
@@ -4838,11 +4835,11 @@ function userDetails(username) {
      ```javascript
      var n = 022;
      ```
-     2. Using `with` statement
-     3. When you use delete operator on a variable name
-     4. Using eval or arguments as variable or function argument name
-     5. When you use newly reserved keywords
-     6. When you declare a function in a block
+     1. Using `with` statement
+     2. When you use delete operator on a variable name
+     3. Using eval or arguments as variable or function argument name
+     4. When you use newly reserved keywords
+     5. When you declare a function in a block
      ```javascript
      if (someCondition) { function f() {} }
      ```
@@ -5110,7 +5107,7 @@ function userDetails(username) {
      ```
      **[⬆ Back to Top](#table-of-contents)**
 
-358. ### How do you remove falsy values from an array?
+359. ### How do you remove falsy values from an array?
      You can apply filter method on array by passing Boolean as parameter. This way it removes all falsy values(0, undefined, null, false and "") from the array.
      ```javascript
      const myArray = [false, null, 1,5, undefined]
@@ -5119,7 +5116,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-359. ### How do you get unique values of an array?
+360. ### How do you get unique values of an array?
      You can get unique values of an array with the combination of `Set` and rest expression/spread(...) syntax.
      ```javascript
      console.log([...new Set([1, 2, 4, 4, 3])]); // [1, 2, 4, 3]
@@ -5127,7 +5124,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-360. ### What is destructuring aliases?
+361. ### What is destructuring aliases?
      Sometimes you would like to have destructured variable with a different name than the property name. In that case, you'll use a `: newName` to specify a name for the variable. This process is called destructuring aliases.
      ```javascript
      const obj = { x: 1 };
@@ -5137,7 +5134,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-361. ### How do you map the array values without using map method?
+362. ### How do you map the array values without using map method?
      You can map the array values without using `map` method by just using `from` method of Array. Let's map city names from Countries array,
      ```javascrippt
      const countries = [
@@ -5155,7 +5152,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-362. ### How do you empty an array?
+363. ### How do you empty an array?
      You can empty an array quicky by setting the array length to zero.
      ```javascript
      let cities = ['Singapore', 'Delhi', 'London'];
@@ -5164,7 +5161,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-363. ### How do you rounding numbers to certain decimals?
+364. ### How do you rounding numbers to certain decimals?
      You can rounding numbers to a certain number of decimals using `toFixed` method from native javascript.
      ```javascript
      let pie = 3.141592653;
@@ -5173,7 +5170,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-364. ### What is the easiest way to convert an array to an object?
+365. ### What is the easiest way to convert an array to an object?
      You can convert an array to an object with the same data using spread(...) operator.
      ```javascript
      var fruits = ["banana", "apple", "orange", "watermelon"];
@@ -5183,7 +5180,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-365. ### How do you create an array with some data?
+366. ### How do you create an array with some data?
      You can create an array with some data or an array with the same values using `fill` method.
      ```javascript
      var newArray = new Array(5).fill("0");
@@ -5192,7 +5189,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-366. ### What are the placeholders from console object?
+367. ### What are the placeholders from console object?
      Below are the list of placeholders available from console object,
      1. %o — It takes an object,
      2. %s — It takes a string,
@@ -5205,7 +5202,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-367. ### Is it possible to add CSS to console messages?
+368. ### Is it possible to add CSS to console messages?
      Yes, you can apply CSS styles to console messages similar to html text on the web page.
      ```javascript
      console.log('%c The text has blue color, with large font and red background', 'color: blue; font-size: x-large; background: red');
@@ -5217,7 +5214,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-368. ### What is the purpose of dir method of console object?
+369. ### What is the purpose of dir method of console object?
      The `console.dir()` is used to display an interactive list of the properties of the specified JavaScript object as JSON.
      ```javascript
      const user = { "name":"John", "id": 1, "city": "Delhi"};
@@ -5228,7 +5225,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-369. ### Is it possible to debug HTML elements in console?
+370. ### Is it possible to debug HTML elements in console?
      Yes, it is possible to get and debug HTML elements in the console just like inspecting elements.
      ```javascript
      const element = document.getElementsByTagName("body")[0];
@@ -5239,7 +5236,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-370. ### How do you display data in a tabular format using console object?
+371. ### How do you display data in a tabular format using console object?
      The `console.table()` is used to display data in the console in a tabular format to visualize complex arrays or objects.
      ```javascript
      const users = [{ "name":"John", "id": 1, "city": "Delhi"},
@@ -5253,7 +5250,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-371. ### How do you verify that an argument is a Number or not?
+372. ### How do you verify that an argument is a Number or not?
      The combination of IsNaN and isFinite methods are used to confirm whether an argument is a number or not.
      ```javascript
      function isNumber(n){
@@ -5263,7 +5260,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-372. ### How do you create copy to clipboard button?
+373. ### How do you create copy to clipboard button?
      You need to select the content(using .select() method) of input element and execute the copy command with execCommand (i.e, execCommand('copy')). You can also execute another system commands like cut and paste.
      ```javascript
      document.querySelector("#copy-button").onclick = function() {
@@ -5277,7 +5274,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-373. ### What is the shortcut to get timestamp?
+374. ### What is the shortcut to get timestamp?
      You can use `new Date().getTime()` to get the current timestamp. There is an alternative shortcut to get the value.
      ```javascript
      console.log(+new Date());
@@ -5286,7 +5283,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-374. ### How do you flattening multi dimensional arrays?
+375. ### How do you flattening multi dimensional arrays?
      Flattening bi-dimensional arrays is trivial with Spread operator.
      ```javascript
      const biDimensionalArr = [11, [22, 33], [44, 55], [66, 77], 88, 99];
@@ -5305,7 +5302,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-375. ### What is the easiest multi condition checking?
+376. ### What is the easiest multi condition checking?
 
      You can use `indexOf` to compare input with multiple values instead of checking each value as one condition.
      ```javascript
@@ -5321,7 +5318,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-376. ### How do you capture browser back button?
+377. ### How do you capture browser back button?
      The `window.onbeforeunload` method is used to capture browser back button event. This is helpful to warn user about loosing the current data.
      ```javascript
      window.onbeforeunload = function() {
@@ -5331,7 +5328,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-377. ### How do you disable right click in the web page?
+378. ### How do you disable right click in the web page?
      The right click on the page can be disabled by returning false from `oncontextmenu` attribute on body element.
      ```html
      <body oncontextmenu="return false;">
@@ -5339,7 +5336,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-378. ### What are wrapper objects?
+379. ### What are wrapper objects?
      Primitive Values like string,number and boolean don't have properties and methods but they are temporarily converted or coerce to an object(Wrapper object) when you try to perform actions on them. For example, if you apply toUpperCase() method on a primitive string value, it does not throw an error but returns uppercase of the string.
      ```javascript
      let name = "john";
@@ -5349,12 +5346,12 @@ function userDetails(username) {
      i.e, Every primitive except null and undefined have Wrapper Objects and the list of wrapper objects are are String,Number,Boolean,Symbol and BigInt.
      **[⬆ Back to Top](#table-of-contents)**
 
-379. ### What is AJAX?
+380. ### What is AJAX?
      AJAX stands for Asynchronous JavaScript and XML and it is a group of related technologies(HTML, CSS, JavaScript, XMLHttpRequest API etc) used to display data asynchronously. i.e. We can send data to the server and get data from the server without reloading the web page.
 
      **[⬆ Back to Top](#table-of-contents)**
 
-380. ### What are the different ways to deal with Asynchronous Code?
+381. ### What are the different ways to deal with Asynchronous Code?
      Below are the list of different way to deal with Asynchronous code.
      1. Callbacks
      2. Promises
@@ -5363,7 +5360,7 @@ function userDetails(username) {
 
      **[⬆ Back to Top](#table-of-contents)**
 
-381. ### How to cancel a fetch request?
+382. ### How to cancel a fetch request?
      Until few days back, One shortcoming of native promises is no direct way to cancel a fetch request. But the new `AbortController` from js specification allows you to use a signal to abort one or multiple fetch calls.
      The basic flow of cancelling a fetch request would be as below,
      1. Create an `AbortController` instance
@@ -5393,10 +5390,6 @@ function userDetails(username) {
      // Wait 2 seconds to abort both requests
      setTimeout(() => controller.abort(), 2000);
      ```
-     **[⬆ Back to Top](#table-of-contents)**
-
-382. ### ?
-
      **[⬆ Back to Top](#table-of-contents)**
 
 383. ### ?
@@ -5484,6 +5477,10 @@ function userDetails(username) {
      **[⬆ Back to Top](#table-of-contents)**
 
 404. ### ?
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+405. ### ?
 
      **[⬆ Back to Top](#table-of-contents)**
 
